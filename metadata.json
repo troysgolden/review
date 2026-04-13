@@ -1,0 +1,5 @@
+{
+  "name": "Review Router",
+  "description": "A smart review-gating micro-page that routes happy customers to public review sites and gathers private feedback from others.",
+  "requestFramePermissions": []
+}
