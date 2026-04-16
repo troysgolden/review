@@ -10,7 +10,6 @@ if (!defined('ABSPATH')) exit;
 require_once plugin_dir_path(__FILE__) . 'includes/ajax-handler.php';
 
 function rr_enqueue_scripts() {
-    error_log('rr_enqueue_scripts called');
     wp_enqueue_style(
         'review-router-css',
         plugin_dir_url(__FILE__) . 'assets/style.css',
@@ -30,9 +29,9 @@ function rr_enqueue_scripts() {
         'ajax_url' => admin_url('admin-ajax.php'),
     ]);
 }
-add_action('wp_enqueue_scripts', 'rr_enqueue_scripts');
 
 function rr_shortcode() {
+    rr_enqueue_scripts();
     return '<div id="review-router-root"></div>';
 }
 add_shortcode('review_router', 'rr_shortcode');
